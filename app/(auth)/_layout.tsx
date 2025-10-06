@@ -2,11 +2,11 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { Tabs } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function TabsLayout() {
+export default function AuthLayout() {
     return (
         <SafeAreaView style={{ flex: 1 }} edges={['top']}>
             <Tabs>
-                <Tabs.Screen  name="index" options={{
+                <Tabs.Screen  name="(laundry)" options={{
                     headerShown:false,
                     title: "Home",
                     tabBarIcon: ({ color, focused }) => (

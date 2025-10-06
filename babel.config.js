@@ -1,22 +1,20 @@
 module.exports = function (api) {
   api.cache(true);
+  let plugins = [];
+
+  plugins.push([
+    '@tamagui/babel-plugin',
+    {
+      components: ['tamagui'],
+      config: './tamagui.config.ts',
+    },
+  ]);
+
+  plugins.push('react-native-reanimated/plugin');
 
   return {
-    presets: [['babel-preset-expo'], 'nativewind/babel'],
+    presets: ['babel-preset-expo'],
 
-    plugins: [
-      [
-        'module-resolver',
-        {
-          root: ['./'],
-
-          alias: {
-            '@': './',
-            'tailwind.config': './tailwind.config.js',
-          },
-        },
-      ],
-      'react-native-worklets/plugin',
-    ],
+    plugins,
   };
 };
